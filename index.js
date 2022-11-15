@@ -22,7 +22,6 @@ const mystery5 = [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3];
 // An array of all the arrays above
 const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5];
 
-
 // Add your functions below:
 
 const doubleUp = array => {
@@ -84,13 +83,30 @@ const validateCred = array => {
 //validateCred(invalid5);
 
 const findInvalidCards = arrays => {
-    let invalidArray = [];
+    let invalidArrays = [];
     for (const array of arrays) {
         const validation = validateCred(array);
         if (validation === 'Invalid card') {
-            invalidArray.push(array);
+            invalidArrays.push(array);
         }
-    } return invalidArray
+    } return invalidArrays
 }
 
-console.log(findInvalidCards(batch))
+console.log(findInvalidCards(batch));
+
+const idInvalidCardCompanies = arrays => {
+    let companyName = [];
+    for (const array of arrays) {
+        if (array[0] === 3) {
+            companyName = 'Amex (American Express)';
+        } else if (array[0] === 4) {
+            companyName = 'Visa';
+        } else if (array[0] === 5) {
+            companyName = 'Mastercard';
+        } else if (array[0] === 6) {
+            companyName = 'Discover';
+        } else {
+            console.log('Company not found')
+        }
+    } return companyName
+}
