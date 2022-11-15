@@ -39,19 +39,24 @@ const doubleUp = array => {
 const sumsArray = array => {
     let total = 0;
     for (let i = 0; i < array.length; i++) {
-        total += array[i]
+        total += array[i];
     } return total
+}
+
+const sumModulo = array => {
+    if (array % 10 === 0) {
+        return 'Valid card'
+    } else {
+        return 'Invalid card'
+    }
 }
 
 const validateCred = array => {
     //luhn algorithm 
     let newArray = doubleUp(array);
     newArray = sumsArray(newArray) + array[array.length - 1];
-
-
-
-
-
+    let validation = sumModulo(newArray);
+    console.log(validation)
 }
 
-validateCred(mystery1);
+validateCred(valid1);
