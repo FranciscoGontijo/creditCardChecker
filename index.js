@@ -24,8 +24,7 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 
 // Add your functions below:
-const validateCred = array => {
-    //luhn algorithm 
+const doubleUp = array => {
     let newArray = [];
     for (let i = array.length - 2; i > -1; i--) {
         let double = array[i] * 2;
@@ -34,7 +33,25 @@ const validateCred = array => {
         } else {
             newArray.push(double);
         }
-    }
+    } return newArray
+}
+
+const sumsArray = array => {
+    let total = 0;
+    for (let i = 0; i < array.length; i++) {
+        total += array[i]
+    } return total
+}
+
+const validateCred = array => {
+    //luhn algorithm 
+    let newArray = doubleUp(array);
+    newArray = sumsArray(newArray) + array[array.length - 1];
+
+
+
+
+
 }
 
 validateCred(mystery1);
