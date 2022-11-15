@@ -73,7 +73,7 @@ const doubleUp = array => {
     }
     if (array.length % 2 === 1) {    
         for (let i = array.length - 2; i > -1; i--) {
-            if (array[i] % 2 === 1) {
+            if (i % 2 === 1) {
                 let double = array[i] * 2;
                 if (double > 9) {
                     newArray.push(double - 9);
@@ -115,4 +115,4 @@ const validateCred = array => {
     return validation
 }
 
-validateCred(valid3);
+validateCred(invalid5);
