@@ -53,10 +53,14 @@ const sumModulo = array => {
 
 const validateCred = array => {
     //luhn algorithm 
+    console.log(array);
     let newArray = doubleUp(array);
+    console.log(newArray);
     newArray = sumsArray(newArray) + array[array.length - 1];
+    console.log(newArray);
     let validation = sumModulo(newArray);
-    console.log(validation)
+    console.log(validation);
+    return validation
 }
 
-validateCred(valid1);
+validateCred(valid5);
