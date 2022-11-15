@@ -25,36 +25,6 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 // Add your functions below:
 
-// if (array.length % 2 === 0) {
-//     for (let i = array.length - 2; i > -1; i--) {
-//         if (array[i] % 2 === 0) {
-//             let double = array[i] * 2;
-//                 if (double > 9) {
-//                     newArray.push(double - 9);
-//                 } else {
-//                     newArray.push(double);
-//                 }
-//         } else {
-//             nemArray.push(array[i]);
-//         }
-//     }
-// }
-// if (array.length % 2 === 1) {    
-//     for (let i = array.length - 2; i > -1; i--) {
-//         if (array[i] % 2 === 1) {
-//             let double = array[i] * 2;
-//             if (double > 9) {
-//                 newArray.push(double - 9);
-//             } else {
-//                 newArray.push(double);
-//             }
-        
-//         } else {
-//             nemArray.push(array[i]);
-//         }
-//     }
-// }
-
 const doubleUp = array => {
     let newArray = [];
     if (array.length % 2 === 0) {
@@ -95,8 +65,8 @@ const sumsArray = array => {
     } return total
 }
 
-const sumModulo = array => {
-    if (array % 10 === 0) {
+const sumModulo = sum => {
+    if (sum % 10 === 0) {
         return 'Valid card'
     } else {
         return 'Invalid card'
@@ -108,9 +78,9 @@ const validateCred = array => {
     console.log(array);
     let newArray = doubleUp(array);
     console.log(newArray);
-    newArray = sumsArray(newArray) + array[array.length - 1];
-    console.log(newArray);
-    let validation = sumModulo(newArray);
+    let sumOfArray = sumsArray(newArray) + array[array.length - 1];
+    console.log(sumOfArray);
+    let validation = sumModulo(sumOfArray);
     console.log(validation);
     return validation
 }
