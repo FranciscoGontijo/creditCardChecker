@@ -102,7 +102,7 @@ const idInvalidCardCompanies = arrays => {
             } else if (array[0] === 6 && !companyName.includes('Discover')) {
                 companyName.push('Discover');
             } else if (array[0] !== 3 && array[0] !== 4 && array[0] !== 5 && array[0] !== 6) {
-                console.log('Company not found')
+                console.log('Company not found');
             }
     } return companyName
 }
