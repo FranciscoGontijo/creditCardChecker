@@ -24,6 +24,36 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 
 // Add your functions below:
+
+if (array.length % 2 === 0) {
+    if (array[i] % 2 === 0) {
+        for (let i = array.length - 2; i > -1; i--) {
+            let double = array[i] * 2;
+            if (double > 9) {
+                newArray.push(double - 9);
+            } else {
+                newArray.push(double);
+            }
+        }
+    } else {
+        nemArray.push(array[i]);
+    }
+}
+if (array.length % 2 === 1) {
+    if (array[i] % 2 === 1) {
+        for (let i = array.length - 2; i > -1; i--) {
+            let double = array[i] * 2;
+            if (double > 9) {
+                newArray.push(double - 9);
+            } else {
+                newArray.push(double);
+            }
+        }
+    } else {
+        nemArray.push(array[i]);
+    }
+}
+
 const doubleUp = array => {
     let newArray = [];
     for (let i = array.length - 2; i > -1; i--) {
