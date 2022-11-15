@@ -75,14 +75,22 @@ const sumModulo = sum => {
 
 const validateCred = array => {
     //luhn algorithm 
-    console.log(array);
     let newArray = doubleUp(array);
-    console.log(newArray);
     let sumOfArray = sumsArray(newArray) + array[array.length - 1];
-    console.log(sumOfArray);
     let validation = sumModulo(sumOfArray);
-    console.log(validation);
     return validation
 }
 
-validateCred(invalid5);
+//validateCred(invalid5);
+
+const findInvalidCards = arrays => {
+    let invalidArray = [];
+    for (const array of arrays) {
+        const validation = validateCred(array);
+        if (validation === 'Invalid card') {
+            invalidArray.push(array);
+        }
+    } return invalidArray
+}
+
+console.log(findInvalidCards(batch))
