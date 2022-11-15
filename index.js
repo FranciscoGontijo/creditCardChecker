@@ -80,8 +80,6 @@ const validateCred = array => {
     return validation
 }
 
-//validateCred(invalid5);
-
 const findInvalidCards = arrays => {
     let invalidArrays = [];
     for (const array of arrays) {
@@ -92,21 +90,20 @@ const findInvalidCards = arrays => {
     } return invalidArrays
 }
 
-console.log(findInvalidCards(batch));
-
 const idInvalidCardCompanies = arrays => {
     let companyName = [];
     for (const array of arrays) {
-        if (array[0] === 3) {
-            companyName = 'Amex (American Express)';
-        } else if (array[0] === 4) {
-            companyName = 'Visa';
-        } else if (array[0] === 5) {
-            companyName = 'Mastercard';
-        } else if (array[0] === 6) {
-            companyName = 'Discover';
-        } else {
-            console.log('Company not found')
-        }
+            if (array[0] === 3 && !companyName.includes('Amex (American Express)')) {
+                companyName.push('Amex (American Express)');
+            } else if (array[0] === 4 && !companyName.includes('Visa')) {
+                companyName.push('Visa');
+            } else if (array[0] === 5 && !companyName.includes('Mastercard')) {
+                companyName.push('Mastercard');
+            } else if (array[0] === 6 && !companyName.includes('Discover')) {
+                companyName.push('Discover');
+            } else if (array[0] !== 3 && array[0] !== 4 && array[0] !== 5 && array[0] !== 6) {
+                console.log('Company not found')
+            }
     } return companyName
 }
+
